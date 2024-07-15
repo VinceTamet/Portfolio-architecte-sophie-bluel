@@ -34,6 +34,9 @@ body {
 ol, ul {
 	list-style: none;
 }
+nav ul li {
+    cursor: pointer;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -56,7 +59,7 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 90px 0
 }
 section {
 	margin: 50px 0
@@ -68,7 +71,8 @@ h1{
 	font-family: 'Syne';
 	font-size: 22px;
 	font-weight: 800;
-	color: #B1663C
+	color: #B1663C;
+	margin-left: 5%;
 }
 
 h1 > span {
@@ -84,6 +88,7 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -98,6 +103,23 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
+
+#admin-banner {
+	display: flex;
+	position: fixed;
+	top: 0;
+	width: 60%;
+	height: 40px;
+	background-color: black;
+	color: white;
+	align-items: center;
+	justify-content: center;
+}
+
+#admin-banner i {
+	margin-right: 7px;
+  }
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -121,10 +143,27 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+#portfolio {
+	padding-top: 100px;
+}
+#modifier-btn{
+	margin: 0;
+	padding-left: 15px;
+	border: 0;
+	font-size: small;
+	cursor: pointer;
+	vertical-align: baseline;
+	background-color: #fefefe;
+}
+
+.fa-regular {
+	padding-right: 5px;
+}
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
 }
+
 .gallery {
 	width: 100%;
 	display: grid;
@@ -135,15 +174,249 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
 }
+
+/* STYLES MODALE */
+.modal {
+	display: none; 
+	position: fixed; 
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4); 
+  }
+  
+  .modal-content {
+	background-color: #fefefe;
+	margin: 15%;
+	width: 60%;
+	height: 60%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 10px;
+  }
+  
+  .modal .close {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: black;
+	font-size: 24px;
+	font-weight: bold;
+	cursor: pointer;
+  }
+
+  .modal h2 {
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+	color: black;
+	padding-bottom: 50px;
+  }
+  /* TODO */
+  /* .separator {
+	width: 100%;
+	height: 1px;
+	background-color: #ddd;
+	margin: 20px 0;
+} */
+  
+  #add-photo {
+	font-family: 'Syne';
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto;
+	min-width: 300px;
+	height: 50px;
+	border-radius: 60px;
+	font-size: 1.2em;
+	border: solid 2px;
+	cursor: pointer;
+  }
+
+  /* MODALE SUPPRESSION */
+  .gallery-modal {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+  
+  .gallery-modal figure {
+	position: relative;
+  	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 15px;
+  }
+  
+  .gallery-modal img {
+	width: 95%;
+  	height: auto;
+	display: block;
+	padding: 3px;
+  }
+
+  button.delete-btn {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	color: white;
+	background-color: black;
+	padding: 4px;
+	margin: 5px;
+	border-radius: 5px;
+  }
+  
+  /* MODALE AJOUT */
+	.modal-content form {
+	display: flex;
+	flex-direction: column;
+  }
+  
+  .modal-content form label,
+  .modal-content form input,
+  .modal-content form select,
+  .modal-content form button {
+	margin-bottom: 15px;
+	
+  }
+  
+  .modal-content form input,
+  .modal-content form select {
+	padding: 8px;
+	font-size: 1em;
+  }
+
+  #file-input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+	height: 40%;
+	background-color: rgba(232, 241, 246, 1);
+  }
+
+  #file-input input {
+	font-family: 'Syne';
+	color: rgba(48, 102, 133, 1);
+	background-color: rgba(203, 214, 220, 1);
+	width: 170px;
+	border-radius: 60px;
+	font-size: 1.2em;
+	border: none;
+	cursor: pointer;
+  }
+
+  #logo-upload-img{
+    background-color: rgba(232, 241, 246, 1);
+    color: rgba(185, 197, 204, 1);
+  }
+
+  .custom-file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(232, 241, 246, 1);
+    color: rgba(185, 197, 204, 1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+  /* #photo {
+	display: none;
+  } */
+
+  
+
+  #title, #category-select {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+  }
+
+  #add-photo-validation {
+	font-family: 'Syne';
+	color: white;
+	background-color: grey;
+	margin : 2em auto;
+	min-width: 300px;
+	height: 50px;
+	border-radius: 60px;
+	font-size: 1.2em;
+	border: solid 2px;
+	cursor: pointer;
+  }
+
+  #add-photo-validation:hover {
+	background-color: #1D6154;
+  }
+  
+  
+  .modal-content form button {
+	padding: 10px;
+	background-color: #1D6154;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  
+/* CATEGORY MENU  */
+
+#category-menu-container{
+	display: flex;
+	justify-content: center;
+	margin-top: -30px;
+	
+}
+.filter {
+	justify-content: space-around;
+}
+
+.filter button{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: #1D6154;
+	background-color: white;
+	margin : 2em auto;
+	min-width: 100px;
+	text-align: center;
+	border-radius: 60px;
+	height: 50px;
+	font-size: 1.2em;
+	border: solid 2px;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	cursor: pointer;
+}
+.filter button:hover {
+	color: white;
+	background-color: #1D6154;	
+}
+.filter button.active {
+	color: white;
+	background-color: #1D6154;
+  }
+
+#category-menu {
+    display: flex;
+    margin-top: 2em; 
+	gap: 15px;
+}
+
 #contact {
 	width: 50%;
 margin: auto;
 }
 #contact > * {
 	text-align: center;
-
 }
 #contact h2{
 	margin-bottom: 20px;
@@ -154,7 +427,6 @@ margin: auto;
 	display: flex;
 	flex-direction: column;
 }
-
 #contact input {
 	height: 50px;
 	font-size: 1.2em;
@@ -167,6 +439,54 @@ margin: auto;
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#log-in {
+	width: 50%;
+margin: auto;
+}
+#log-in > * {
+	text-align: center;
+}
+#log-in  h2{
+	margin-bottom: 20px;
+}
+#log-in  form{
+		text-align: left;
+		margin-top:30px;
+		display: flex;
+		flex-direction: column;
+}
+#log-in button{
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#log-in label {
+	margin: 2em 0 1em 0;
+}
+.log-in {
+	cursor: pointer;
+}
+#log-in p {
+	text-align: center;
+	cursor: pointer;
+}
+#log-in input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+button[type="submit"]{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : 2em auto ;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
 }
 
 input[type="submit"]{
@@ -185,4 +505,5 @@ footer nav ul {
 	justify-content: flex-end;
 	margin: 2em
 }
+
 
