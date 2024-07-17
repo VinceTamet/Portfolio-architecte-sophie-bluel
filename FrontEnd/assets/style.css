@@ -108,7 +108,7 @@ li:hover {
 	display: flex;
 	position: fixed;
 	top: 0;
-	width: 60%;
+	width: 100%;
 	height: 40px;
 	background-color: black;
 	color: white;
@@ -190,7 +190,7 @@ li:hover {
 	background-color: #fefefe;
 	margin: 15%;
 	width: 60%;
-	height: 60%;
+	height: 70%;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -200,8 +200,8 @@ li:hover {
   
   .modal .close {
 	position: absolute;
-	top: 10px;
-	right: 20px;
+	top: 5%;
+	right: 5%;
 	color: black;
 	font-size: 24px;
 	font-weight: bold;
@@ -209,13 +209,13 @@ li:hover {
   }
 
   .modal h2 {
-	margin-top: 20px;
+	margin-top: 8%;
 	text-align: center;
 	width: 100%;
 	color: black;
-	padding-bottom: 50px;
+	padding-bottom: 3%;
   }
-  /* TODO */
+ /* TODO  */
   /* .separator {
 	width: 100%;
 	height: 1px;
@@ -239,7 +239,8 @@ li:hover {
   /* MODALE SUPPRESSION */
   .gallery-modal {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(19%, 1fr));
+	gap: 1%;
   }
   
   .gallery-modal figure {
@@ -260,8 +261,8 @@ li:hover {
 
   button.delete-btn {
 	position: absolute;
-	top: 5px;
-	right: 5px;
+	top: 5%;
+	right: 5%;
 	background: none;
 	border: none;
 	font-size: 20px;
@@ -277,6 +278,8 @@ li:hover {
 	.modal-content form {
 	display: flex;
 	flex-direction: column;
+	width: 70%;
+	height: 100%;
   }
   
   .modal-content form label,
@@ -314,25 +317,47 @@ li:hover {
   }
 
   #logo-upload-img{
+	display: flex;
     background-color: rgba(232, 241, 246, 1);
     color: rgba(185, 197, 204, 1);
+	width: 76px;
+    height: 76px;
   }
 
   .custom-file-upload {
     display: flex;
     align-items: center;
     justify-content: center;
+	width: 76px;
+    height: 76px;
     background-color: rgba(232, 241, 246, 1);
     color: rgba(185, 197, 204, 1);
     padding: 10px;
     border-radius: 5px;
 }
 
-  /* #photo {
-	display: none;
-  } */
+	input[type="file"] {
+	    display: none;
+	}
+	#add-image-btn {
+	font-family: 'Syne';
+	color: #306685;
+	background-color: #CBD6DC;
+	min-width: 30%;
+	height: 30%;
+	border-radius: 60px;
+	font-size: 1.2em;
+	cursor: pointer;
+	margin-bottom: 1%;
+	}
 
-  
+    #image {
+	padding-top: 2%;
+   }
+
+	.file-info {
+		padding-bottom: 2%;
+	}
 
   #title, #category-select {
 	height: 50px;
@@ -403,7 +428,12 @@ li:hover {
 .filter button.active {
 	color: white;
 	background-color: #1D6154;
-  }
+}
+.active {
+    background-color: #f0f0f0; /* Exemple de couleur de fond */
+    color: #333; /* Exemple de couleur de texte */
+    /* Ajoutez d'autres styles selon vos besoins */
+}
 
 #category-menu {
     display: flex;

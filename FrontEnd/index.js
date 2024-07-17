@@ -15,10 +15,12 @@ async function getWorks() {
   return works
 }
 
+// Les boutons filtres 
 function createCategoryMenu(categories) {
   const menuContainer = document.querySelector("#category-menu")
   const noFilterButton = document.createElement("button")
   noFilterButton.textContent = "Tous"
+  noFilterButton.classList.add("active")
   noFilterButton.addEventListener("click", () => {
     displayAllWorks()
     setActiveButton(noFilterButton)
@@ -172,6 +174,32 @@ const closeBtns = document.querySelectorAll(".close")
       categorySelect.appendChild(option)
     }
   }
+
+  document.getElementById("add-image-btn").addEventListener("click", function() {
+    document.getElementById("image").click()
+})
+
+// Afficher l'image sélectionnée
+document.getElementById("image").addEventListener("change", function(event) {
+  const file = event.target.files[0]
+  // On check si le fichier a été selectionné
+  if (file) {
+      const fileChosen = new FileReader()
+      fileChosen.onload = function(e) {
+        // Une fois le fichier lu => 
+          const imgElement = document.createElement("img")
+          imgElement.src = e.target.result
+          imgElement.style.width = "76px"
+          imgElement.style.height = "76px"
+          
+          const label = document.querySelector(".custom-file-upload")
+          label.innerHTML = ""
+          label.appendChild(imgElement)
+      }
+      // on lit le fichier comme une URL de données
+      fileChosen.readAsDataURL(file)
+  }
+})
 
    // On envoie le formulaire pour ajouter une photo
   const addPhotoForm = document.getElementById("add-photo-form")
